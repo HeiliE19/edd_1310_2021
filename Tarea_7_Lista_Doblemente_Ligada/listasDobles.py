@@ -108,3 +108,36 @@ class DoubleLinkedList:
         except:
             print("El valor no se encuentra en la lista")
         return find
+
+    # Encuentra posición desde tail
+    def find_fromtail(self , value):
+        curr_node = self.__tail
+        posicion = 0
+        try:
+            while value != curr_node.data:
+                curr_node = curr_node.prev
+                posicion +=1
+            if value == curr_node.data:
+                curr_node = curr_node
+            print(f'Desde tail... La posición del dato {curr_node.data} es: ')
+        except:
+            print('No se pudo encontrar el dato')
+            return
+
+        return posicion
+
+    #Encuentra posición desde head
+    def find_fromhead(self , value):
+        curr_node = self.__head
+        posicion = 0
+        try:
+            while value != curr_node.data:
+                curr_node = curr_node.next
+                posicion +=1
+            if value == curr_node.data:
+                curr_node = curr_node
+            print(f'Desde head... La posición del dato {curr_node.data} es: ')
+        except:
+            print(f'No se pudo encontrar el dato en la lista')
+            return
+        return posicion
